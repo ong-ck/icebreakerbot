@@ -6,7 +6,7 @@
 <h3 align="center">IceBreakerBot</h3>
 
   <p align="center">
-    Find a friend through this telegram bot, create a group chat with them and the bot and let the ice breaking begin!
+    Find a friend through this telegram bot, create a group chat with them and the bot, and let the ice breaking begin!
     <br />
     <a href="https://github.com/ong-ck/icebreakerbot"><strong>Explore the docs »</strong></a>
 
@@ -18,9 +18,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -45,14 +42,45 @@
 
 ## About The Project
 
-<div id = "built-with"></div>
+This project is part of our submission to the MakeUC 2022 hackathon. Our project submission can be viewed [here](https://devpost.com/software/icebreakerbot) on Devpost. Below is an exerpt from our project submission.
 
-### Built With
+### Devpost Project Submission Exerpt
 
+#### Inspiration
+We were inspired by the "Global Connectivity" track of the hackathon and decided to come up with something that helps to bring people together. A problem we have discovered as part of this track, is that sometimes when people come together, there tend to be awkward silence and a lack of momentum to get the conversation going.
+
+#### What it does
+Following our inspiration, we have decided to create a telegram bot to solve the issue as it is a popular messaging app that most people already have installed, thus mitigating the issue of barriers to entry. Our telegram bot does mainly two things: 1. connecting people with similar attributes and 2. helping them "break the ice".
+
+#### How we built it
+We built it using the following resources:
 * [Python](https://www.python.org/)
 * [Telegram API](https://core.telegram.org/api)
 * [python-telegram-bot](python-telegram-bot.org)
 * [libretranslate](libretranslate.com)
+* [MongoDB](https://www.mongodb.com/)
+
+#### Challenges we ran into
+There were multiple challenges we have ran into during the process of completing this project:
+1. Inline keyboard for telegram bot does not seem to work as we intended. Hence we decided to use a reply keyboard instead.
+2. Some lack of technical knowledge. Some quick googling helped us greatly in this problem.
+
+#### Accomplishments that we're proud of
+We are proud to be able to accomplish the following features for our project:
+1. A fully functional telegram bot
+2. User data collection (for matching with others)
+3. Auto translation capabilities
+4. Database backend (using MongoDB)
+
+#### What we learned
+There were many learning points in this project:
+1. Our technical knowledge in the areas of telegram bot building has improved
+2. Process of engaging in a software project
+
+#### What's next for IceBreakerBot
+We hope to continue implementing the features that we wanted but was unable to due to lack of time, such as:
+1. More/better content for ice breaking (currently this feature only sends out a randomised ice breaker question to get the conversation going).
+2. Matching algorithm (currently we are unable to implement the matching algorithm properly to match users with others).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -132,7 +160,7 @@
 ### Features
 - Finding like-minded individuals
 - Auto translation for better connectivity
-- Ice Breaker features
+- Ice Breaker features (Ice Breaker Questions)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -145,5 +173,6 @@
 * [Starter python code for a telegram bot using the library python-telegram-bot by liuhh02](https://gist.github.com/liuhh02/193bb28aab9a4efe08962c5b78c3b5da)
 * [python-telegram-bot](python-telegram-bot.org)
 * [libretranslate](libretranslate.com)
+* [Ice breaker questions](https://museumhack.com/list-icebreakers-questions/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

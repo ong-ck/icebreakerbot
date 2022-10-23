@@ -14,7 +14,7 @@ import requests
 import json
 
 # API variables
-from icebreakerbot.config import environ #config stores all the environment variables
+from config import environ #config stores all the environment variables
 Telegram_API = environ['telegram']
 MongoDB_API = environ['database']
 
@@ -43,21 +43,12 @@ from telegram import (
 # Telegram API Token
 TOKEN = Telegram_API
 
+# Ice Breaker Questions
+from icebreakerquestions import questions
+import random # to randomise ice breaker question
+
 # State variables
 NAME, AGE, GENDER, INTEREST, VALUE, CONTINENT, SETLANGFROM, SETLANGTO = range(8)
-
-##########################################################################
-dict = {}
-
-'''
-coordinates = {Asia: (34.0479° N, 100.6197° E),
-              Africa: (8.7832° S, 34.5085° E),
-              Europe: (54.5260° N, 15.2551° E),
-              North America: (54.5260° N, 105.2551° W),
-              South America: (8.7832° S, 55.4915° W),
-              Australasia: (29.5328° S, 145.4915° E)}
-'''
-###########################################################################
 
 def start(update, context):
     """Send a message when the command /start is issued."""
@@ -73,7 +64,7 @@ def find(update, context):
   status = r.json()['result']['type']
 
   # prevent using this function in group chat
-  if (status == "group"):
+  if (status == "group" or status == "supergroup"):
     update.message.reply_text("You can only find friends in private chat!")
     print(status)
     return
@@ -116,7 +107,7 @@ def interest(update, context):
 ]
   update.message.reply_text("Please Choose 3 most important values to you", reply_markup=ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, input_field_placeholder="Top 3 Values?"))
   interest = update.message.text
-  dict["interest"] = interest
+  dict["interests"] = interest
   
   return VALUE
 
@@ -133,7 +124,7 @@ def value(update, conext):
   one_time_keyboard=True, input_field_placeholder="Continent?"))
   
   value = update.message.text
-  dict["value"] = value
+  dict["values"] = value
   return CONTINENT
 
 def continent(update, conext):  
@@ -248,7 +239,7 @@ def breakice(update, context):
       return
 
     # bot is in a group -> proceed to break some ICEEE
-    update.message.reply_text("I am in a group!")
+    update.message.reply_text(questions[random.randint(0, len(questions))])
     print(status)
   
 
