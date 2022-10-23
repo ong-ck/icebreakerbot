@@ -3,7 +3,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">IceBreakerBot</h3>
+<h3 align="center">IceBreakerBot (@icebreakingbot)</h3>
 
   <p align="center">
     Find a friend through this telegram bot, create a group chat with them and the bot, and let the ice breaking begin!
